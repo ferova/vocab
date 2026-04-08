@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Japanese Calendar Flashcards</title>
+    <link rel="icon" href="favicon.gif" type="image/gif" />
+    <link rel="shortcut icon" href="favicon.gif" type="image/gif" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Zen+Maru+Gothic:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <div class="global-controls" aria-label="Language controls">
+        <label for="langPicker" id="langPickerLabel">Language</label>
+        <select id="langPicker" class="lang-picker">
+          <option value="en">English</option>
+          <option value="es">Español</option>
+        </select>
+      </div>
+
+      <header id="hero" class="hero">
+        <p id="heroEyebrow" class="eyebrow">Vocabulary Practice</p>
+        <h1 id="heroTitle">Japanese Vocabulary Trainer</h1>
+        <p id="heroSubtitle" class="subtitle">
+          Pick a deck, choose a direction, and practice.
+        </p>
+      </header>
+
+      <section id="selectionView" class="selection-view card">
+        <div class="section-copy">
+          <p id="selectionStep" class="section-kicker">Step 1</p>
+          <h2 id="selectionTitle">Choose What To Practice</h2>
+        </div>
+
+        <div id="deckGrid" class="deck-grid"></div>
+      </section>
+
+      <section id="practiceView" class="practice-view" hidden>
+        <div class="practice-header card">
+          <div class="practice-header-top">
+            <div class="header-actions">
+              <button id="backBtn" type="button" class="ghost small-button">Back To Decks</button>
+              <button id="refreshBtn" type="button" class="ghost small-button">Refresh Deck</button>
+            </div>
+            <div id="modeSwitch" class="mode-switch" aria-label="Practice direction">
+              <button type="button" class="mode-button active" data-mode="en_to_jp">English to Japanese</button>
+              <button type="button" class="mode-button" data-mode="jp_to_en">Japanese to English</button>
+            </div>
+          </div>
+
+          <div class="practice-header-main">
+            <div>
+              <p id="currentDeckKicker" class="section-kicker">Current Deck</p>
+              <div class="deck-heading">
+                <span class="deck-main-icon-wrap" aria-hidden="true">
+                  <i id="deckIcon" class="deck-main-icon" data-lucide="calendar-days"></i>
+                </span>
+                <h2 id="deckTitle">Calendar + Time</h2>
+              </div>
+              <p id="deckSubtitle" class="session-subtitle"></p>
+            </div>
+
+            <div class="session-stats" aria-label="Session stats">
+              <div class="session-pill good-pill">
+                <i class="pill-icon" data-lucide="circle-check" aria-hidden="true"></i>
+                <span id="statGoodLabel" class="pill-copy">Good</span>
+                <strong id="statGood">0</strong>
+              </div>
+              <div class="session-pill done-pill">
+                <i class="pill-icon" data-lucide="list-checks" aria-hidden="true"></i>
+                <span id="statCompletedLabel" class="pill-copy">Completed</span>
+                <strong id="statCompleted">0 / 0</strong>
+              </div>
+              <div class="session-pill wrong-pill">
+                <i class="pill-icon" data-lucide="circle-x" aria-hidden="true"></i>
+                <span id="statWrongLabel" class="pill-copy">Wrong</span>
+                <strong id="statWrong">0</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <section class="trainer card" id="trainerCard">
+          <div class="prompt-area">
+            <p class="prompt-label" id="promptLabel">English Prompt</p>
+            <p class="prompt-text" id="promptText"></p>
+            <p class="prompt-japanese" id="promptJapanese"></p>
+            <p class="prompt-sub" id="promptSub"></p>
+          </div>
+
+          <form id="answerForm" class="answer-form" autocomplete="off">
+            <label for="answerInput" id="answerLabel">Your answer</label>
+            <input
+              id="answerInput"
+              type="text"
+              placeholder="Type answer"
+              autocapitalize="off"
+              spellcheck="false"
+              required
+            />
+            <p id="romajiPreview" class="romaji-preview" aria-live="polite"></p>
+
+            <div class="actions">
+              <button id="submitBtn" type="submit" class="primary">Check</button>
+            </div>
+          </form>
+
+          <div id="feedback" class="feedback" aria-live="polite"></div>
+
+          <div id="completionPanel" class="completion-panel" hidden>
+            <p id="completionKicker" class="section-kicker">Session Complete</p>
+            <h3 id="completionTitle">Nice work.</h3>
+            <p id="completionText" class="completion-text"></p>
+            <div class="actions completion-actions">
+              <button id="retryWrongBtn" type="button" class="secondary">Practice Wrong Words Only</button>
+              <button id="restartBtn" type="button" class="primary">Restart This Deck</button>
+              <button id="changeDeckBtn" type="button" class="ghost">Choose Another Deck</button>
+            </div>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script>
+    <script src="app.js"></script>
+    <script>NekoType="socks"</script>
+    <h1 id=nl><script src="https://webneko.net/n20171213.js"></script><a href="https://webneko.net">Neko</a></h1>
+  </body>
+</html>

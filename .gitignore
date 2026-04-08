@@ -1,0 +1,30 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Python virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Testing artifacts
+.playwright-mcp/
+
+# Environment variables
+.env
+.env.local
+
+# Dependencies (future-proofing)
+node_modules/
+
+# Build outputs (future-proofing)
+dist/
+build/
